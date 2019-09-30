@@ -1,0 +1,281 @@
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Grenze', serif;
+    color: var(--light);
+}
+
+.top-container {
+    display: grid;
+    width: 100%;
+    height: 500px;
+    background-color: #2BCDC0;
+}
+
+.main-nav {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    overflow: auto;
+}
+
+.main-nav a {
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 12px;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    list-style: none;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.main-nav .fbookbtn {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    padding: 0px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 65px;
+    max-height: 75px;
+    box-shadow: var(--shadow);
+}
+
+.main-nav .twitbtn {
+    background-color: #1DA1F2;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 65px;
+    max-height: 55px;
+    box-shadow: var(--shadow);
+}
+
+.main-nav .aboutbtn {
+    width: 65;
+    height: 75px;
+}
+
+.aboutbtn:hover {
+    background-color: transparent;
+    box-shadow: var(--shadow);
+}
+
+.main-nav .portbtn {
+    background-color: transparent;
+    width: 65;
+    height: 75px;
+}
+
+.portbtn:hover {
+    box-shadow: var(--shadow);
+}
+
+.main-nav .homebtn {
+    background-color: transparent;
+    width: 65;
+    height: 75px;
+}
+
+.homebtn:hover {
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    background-color: royalblue;
+}
+
+.welcome {
+    font-size: 50px;
+    text-align: center;
+}
+
+.main-section {
+    display: grid;
+    height: 100%;
+    /* padding: 50px 200px; */
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 200px;
+    background-color: var(--dark);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-areas: 
+    'bacon-1 bacon-2 bacon-3'
+    'bacon-1 bacon-2 bacon-3';
+}
+
+.bacon-article {
+    padding-top: 50px;
+    width: 50%;
+    height: 100%;
+}
+
+.bacon-article h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.bacon-article a {
+    text-decoration: none;
+}
+
+.article-bar {
+    width: 100%;
+    height: 25px;
+    border: 2px;
+    border-style: solid;
+}
+
+.blueBar {
+    background-color: #33A8DD;
+    border-color: #33A8DD;
+}
+
+.orangeBar {
+    background-color: #F46731;
+    border-color: #F46731;
+}
+
+.tealBar {
+    background-color: #2BCDC0;
+    border-color: #2BCDC0;
+}
+
+.bacon-1 {
+    grid-area: bacon-1;
+}
+
+.bacon-2 {
+    grid-area: bacon-2;
+}
+
+.bacon-3 {
+    grid-area: bacon-3;
+}
+
+.bacon-articles {
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 100%;
+}
+
+.bacon-articles h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.bacon-articles a {
+    text-decoration: none;
+}
+
+.bacon-articles h1 {
+    bottom: 0%;
+    animation-duration: 5s;
+    animation-name: slidein, bounce;
+    animation-direction: alternate;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(100%)
+    }
+    to {
+        transform: translateX(0%)
+    }
+}
+
+.bacon-articles p {
+    animation-name: fadeIn;
+    animation-delay: 7s;
+    animation-duration: 3s;
+}
+
+/* @keyframes bounce {
+    from { transform: translate3d(0, 0, 0);     }
+    to   { transform: translate3d(0, 200px, 0); }
+} */
+
+.about-section {
+    display: grid;
+    height: 100%;
+    grid-gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    padding-left: 200px;
+    background-color: var(--dark);
+    grid-template-areas: 
+    'vid vid desc'
+    'vid vid desc';
+}
+
+.vid {
+    grid-area: vid;
+    width: 100%;
+    height: 0;
+}
+
+.desc {
+    grid-area: desc;
+}
+
+@media (max-width: 992px) {
+    .main-section {
+        grid-template-areas: 
+            'bacon-1 bacon-2'
+            'bacon-3 bacon-3';
+    }
+
+    .about-section {
+        grid-template-areas: 
+            'vid'
+            'desc';
+    }
+}
+
+@media (max-width: 576px) {
+    .top-container {
+        background-color: #33A8DD;
+    }
+
+    .main-section {
+        background-color: #F7F5F6;
+        color: black;
+
+        grid-template-areas: 
+            'bacon-1'
+            'bacon-2'
+            'bacon-3';
+    }
+
+    .about-section {
+        padding-right: 200px;
+        padding-left: 50px;
+        grid-gap: 300px;
+        grid-template-areas: 
+            'vid'
+            'desc';
+    }
+
+    .vid iframe {
+        width: 400px;
+        height: 300px;
+    }
+}
