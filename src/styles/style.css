@@ -43,6 +43,7 @@ html {
 }
 
 .main-nav .fbookbtn {
+    grid-area: fbookbtn;
     background-color: dodgerblue;
     border: none;
     color: white;
@@ -56,6 +57,7 @@ html {
 }
 
 .main-nav .twitbtn {
+    grid-area: twitbtn;
     background-color: #1DA1F2;
     border: none;
     color: white;
@@ -67,16 +69,18 @@ html {
 }
 
 .main-nav .aboutbtn {
+    grid-area: aboutbtn;
+    background-color: transparent;
     width: 65;
     height: 75px;
 }
 
 .aboutbtn:hover {
-    background-color: transparent;
     box-shadow: var(--shadow);
 }
 
 .main-nav .portbtn {
+    grid-area: portbtn;
     background-color: transparent;
     width: 65;
     height: 75px;
@@ -87,6 +91,7 @@ html {
 }
 
 .main-nav .homebtn {
+    grid-area: homebtn;
     background-color: transparent;
     width: 65;
     height: 75px;
@@ -237,6 +242,11 @@ html {
 }
 
 @media (max-width: 992px) {
+    .top-container .main-nav {
+        /* grid-template-areas: 
+            'fbookbtn twitbtn aboutbtn'
+            'portbtn homebtn'; */
+    }
     .main-section {
         grid-template-areas: 
             'bacon-1 bacon-2'
@@ -253,6 +263,14 @@ html {
 @media (max-width: 576px) {
     .top-container {
         background-color: #33A8DD;
+    }
+
+    .main-nav a {
+        font-size: 20px;
+        /* grid-template-areas: 
+            'fbookbtn twitbtn'
+            'aboutbtn portbtn'
+            'homebtn homebtn'; */
     }
 
     .main-section {
